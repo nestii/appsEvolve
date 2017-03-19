@@ -1,0 +1,143 @@
+.reveal section::before {
+    height: inherit !important;
+    width:inherit !important;
+}
+
+.reveal section::after {
+    box-shadow: none !important;
+}
+
+.reveal section img.plain {
+    background: white;
+    border: none;
+    box-shadow: none;
+    width: 400px;
+    height: 400px;
+}
+
+.reveal section img.icon_vertical {
+    background: white;
+    border: none;
+    box-shadow: none;
+    width: 150px;
+    height: 70px;
+    float: left;
+}
+
+.reveal ul.icons-list {
+    list-style-type: none;
+    margin-left:0px;
+    padding-left:0px;
+    display: inline-block;
+
+}
+
+.reveal ul.icons-list p {
+    text-align: right;
+    display:inline-block;
+    padding: 5px 0px 0px 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.reveal section img.custom {
+    background: white;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal section img.no-margin {
+    background: white;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    width: 500px;
+}
+
+.reveal section .middle {
+    vertical-align: middle;
+}
+
+.reveal ul.no-bullets {
+    list-style-type: none;
+}
+
+.reveal ul.coloured-bullets{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+}
+
+.reveal .normal-text{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+}
+
+.reveal .slides .inline {
+    display: inline;
+    margin: auto
+}
+
+.reveal blockquote {
+    box-shadow: 0px 0px 2px rgba(0, 188, 212, 0.8) !important;
+}
+
+.reveal .slides .noTransform {
+    text-transform: none;
+}
+
+.reveal .slides .lowercase {
+    text-transform: lowercase;
+}
+
+.reveal div.link_footer {
+    padding-top: 40px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.reveal kbd {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 11px;
+    line-height: 1.4;
+    text-shadow: 0 1px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    padding: .1em .6em;
+    margin: 0 .1em;
+    white-space: nowrap;
+    box-shadow: 0 1px 0 rgba(0,0,0,.2),0 0 0 2px #fff inset;
+    border-radius: 3px;
+    font-family: monospace;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-size: 16px;
+}
+
+.reveal .slides .main-slide {
+    font-family: 'Nothing You Could Do';
+    color: white;
+}
+
+.reveal .slides .main-title {
+    font-family: 'Nothing You Could Do';
+    color: #3b78e7;
+}
+
+.reveal .slides .title_header {
+    float: left;
+}
+
+.reveal .slides .author {
+    font-family: 'Nothing You Could Do';
+    color: white;
+    /*color: #3b78e7;*/
+}
+
+.reveal .slides .title_wrapper {
+    display: inline-block;
+}
+
+.reveal .slides section .fragment.highlight-green.visible {
+    color: green !important;
+}

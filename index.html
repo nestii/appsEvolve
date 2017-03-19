@@ -1,0 +1,284 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Handlee|Nothing+You+Could+Do|Open+Sans+Condensed:300" rel="stylesheet">
+
+    <link rel="stylesheet" href="./jspm_packages/github/hakimel/reveal.js@3.3.0/css/reveal.css">
+    <link rel="stylesheet" href="./jspm_packages/github/hakimel/reveal.js@3.3.0/css/theme/white.css">
+    <link rel="stylesheet" href="./src/css/common.css">
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'src/css/print/pdf.css' : 'src/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section  data-background-color="#3F51B5">
+                <div class="title_wrapper">
+                    <h1 class="main-slide title_header" >The realtime web is coming</h1>
+
+                </div>
+                <div class="title_wrapper">
+                    <h3 class="main-slide title_header" >RethinkDB Horizon</h3>
+                </div>
+
+                <p class="author">
+                    by Ewa Nestorowicz & Bartek Pietrowski
+                </p>
+
+            </section>
+
+            <section>
+                <h1 class="main-title">
+                    Your experience?
+                </h1>
+
+                <img class="custom" src="src/img/experience.png">
+            </section>
+
+            <section>
+                <h1 class="main-title">
+                    Agenda
+                </h1>
+
+                <ul class="coloured-bullets">
+                    <li><b>The need</b></li>
+                    <li><b>Existing solutions</b></li>
+                    <li><b>RethinkDB</b></li>
+                    <li><b>Horizon & RethinkDB</b></li>
+                    <ul class="coloured-bullets">
+                        <li>Overview & stack</li>
+                        <li>Websockets</li>
+                        <li>Security?</li>
+                        <li>Upcoming features</li>
+                    </ul>
+                    <li><b>Demo</b></li>
+                </ul>
+                <img class="custom" style="float: right" src="src/img/agenda.jpg">
+            </section>
+
+            <div class="slides">
+            <section  data-background-color="#3b78e7">
+                <div class="title_wrapper">
+                    <h1 class="main-slide title_header" >The need</h1>
+                </div>
+            </section>
+                <section>
+                    <section>
+                        <h1 class="main-title">
+                            Realtime web apps
+                        </h1>
+                        <ul class="coloured-bullets">
+                            <li class="fragment fade-up">IoT</li>
+                            <li class="fragment fade-up">Chats</li>
+                            <li class="fragment fade-up">Streams</li>
+                            <li class="fragment fade-up">Web collaboration</li>
+                            <li class="fragment fade-up">Exchange & marketplaces updates</li>
+                            <li class="fragment fade-up">Multiplayer games</li>
+                            <li class="fragment fade-up">Analysis/charts</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section  data-background-color="#3b78e7">
+                    <div class="title_wrapper">
+                        <h1 class="main-slide title_header" >Existing solutions</h1>
+                    </div>
+                </section>
+
+                    <section>
+                        <section>
+                            <h1 class="main-title">
+                                What do people use?
+                            </h1>
+                            <ul class="coloured-bullets">
+                                <li class="fragment fade-up"><b>Build app from scratch :)</b></li>
+                                <li class="fragment fade-up"><b>Firebase</b></li>
+                                <ul class="coloured-bullets">
+                                    <li class="fragment fade-up">Commercial</li>
+                                    <li class="fragment fade-up">Callbacks are triggered when data changes</li>
+                                    <li class="fragment fade-up">Runs on Google infrastructure - public cloud</li>
+                                    <li class="fragment fade-up">API is the limit - problems with complex applications</li>
+                                </ul>
+                                <li class="fragment fade-up"><b>Meteor</b></li>
+                                <ul class="coloured-bullets">
+                                    <li class="fragment fade-up">Tightly coupled</li>
+                                    <li class="fragment fade-up">No node.js ecosystem</li>
+                                </ul>
+                            </ul>
+                        </section>
+                    </section>
+
+                <section  data-background-color="#3b78e7">
+                    <div class="title_wrapper">
+                        <h1 class="main-slide title_header" >Rethink DB</h1>
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <h1 class="main-title">
+                           Overview
+                        </h1>
+                        <ul class="coloured-bullets">
+                            <li class="fragment fade-up">Opensource NoSQL database</li>
+                            <li class="fragment fade-up">For a realtime web apps</li>
+                            <li class="fragment fade-up">Stores JSON</li>
+                            <li class="fragment fade-up">Uses ReQL (DSL)</li>
+                            <li class="fragment fade-up">Client-side triggers through changefeeds & notifications</li>
+                        </ul>
+                        <img class="custom" src="src/img/rethink-vs-firebase.jpg">
+                    </section>
+
+                    <section>
+                        <h1 class="main-title">
+                            Who uses it?
+                        </h1>
+                        <ul class="icons-list">
+                            <li class="fragment fade-up">
+                                <img class="icon_vertical" src="src/img/nasa.png">
+                                <p>Extra-Vehicular Activity - spacesuits</p>
+                            </li>
+
+                        </ul>
+                        <ul class="icons-list">
+                            <li class="fragment fade-up">
+                                <img class="icon_vertical" src="src/img/platzi.png">
+                                <p>Instant messaging in online courses</p>
+                            </li>
+                        </ul>
+                        <ul class="icons-list">
+                            <li class="fragment fade-up">
+                                <img class="icon_vertical" src="src/img/jive.jpg">
+                                <p>Collaboration solutions for business</p>
+                            </li>
+                        </ul>
+
+                        <ul class="icons-list">
+                            <li class="fragment fade-up">
+                                <img class="icon_vertical" src="src/img/nextgxdx.png">
+                                <p>Data collection and curation process</p>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h1 class="main-title">
+                            ReQL
+                        </h1>
+                    </section>
+                </section>
+
+                </section>
+
+                <section  data-background-color="#3b78e7">
+                    <div class="title_wrapper">
+                        <h1 class="main-slide title_header" > Horizon & RethinkDB</h1>
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <h1 class="main-title">
+                            Horizon
+                        </h1>
+                        <ul class="coloured-bullets">
+                            <li class="fragment fade-up">Enables to build realtime apps without writing backend code</li>
+                            <li class="fragment fade-up">Created by Rethink DB</li>
+                            <li class="fragment fade-up">Opensource</li>
+                            <li class="fragment fade-up">Contains node.js ecosystem</li>
+                            <li class="fragment fade-up">Can be used as library to node.js app</li>
+                            <li class="fragment fade-up">Contains components: <b>subsriptions, persistence, authentication, sessions, etc.</b></li>
+                            <li class="fragment fade-up">Scals lineary by Rethink DB's clustering engine</li>
+                            <li class="fragment fade-up">Queries return RxJS Observables</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1 class="main-title">
+                            Overview & stack
+                        </h1>
+                        <img class="custom" src="src/img/horizon.jpg">
+                    </section>
+
+                    <section>
+                        <h1 class="main-title">
+                            Overview & stack
+                        </h1>
+                        <ul class="coloured-bullets">
+                            <li class="fragment fade-up">Enables to build realtime apps without writing backend code</li>
+                            <li class="fragment fade-up">Created by Rethink DB</li>
+                            <li class="fragment fade-up">Opensource</li>
+                            <li class="fragment fade-up">Contains node.js ecosystem</li>
+                            <li class="fragment fade-up">Can be used as library to node.js app</li>
+                            <li class="fragment fade-up">Contains components: <b>subsriptions, persistence, authentication, sessions, etc.</b></li>
+                            <li class="fragment fade-up">Scals lineary by Rethink DB's clustering engine</li>
+                            <li class="fragment fade-up">Queries return RxJS Observables</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1 class="main-title">
+                            Websockets
+                        </h1>
+                        <p class="normal-text"><b>Provides full-duplex communication channels over a single TCP connection.</b></p>
+                        <img class="no-margin" src="src/img/websockets_guides.png">
+                    </section>
+
+                    <section>
+                        <h1 class="main-title">
+                            Security?
+                        </h1>
+                        <ul class="coloured-bullets">
+                            <li class="fragment fade-up">Anybody can run a query</li>
+                            <li class="fragment fade-up">Similar to Linux Security Model for files with less restrictions</li>
+                            <li class="fragment fade-up">Each user owns an object, which can be shared to others</li>
+                            <li class="fragment fade-up">Security on queries</li>
+                            <li class="fragment fade-up">Differences between dev and prod mode (special flag)</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <h1 class="main-title">
+                        Upcoming features
+                    </h1>
+                    <ul class="coloured-bullets">
+                        <li class="fragment fade-up">GraphQL</li>
+                        <li class="fragment fade-up">Analysis/charts</li>
+                    </ul>
+                </section>
+
+                <section  data-background-color="#3b78e7">
+                    <div class="title_wrapper">
+                        <h1 class="main-slide title_header" >Demo</h1>
+                    </div>
+                </section>
+
+                <section  data-background-color="#3b78e7">
+                    <div class="title_wrapper">
+                        <h1 class="main-slide title_header" >Questions?</h1>
+                    </div>
+                    <img class="custom" src="src/img/Lets-go.png">
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./jspm_packages/system.js"></script>
+    <script src="./config.js"></script>
+    <script>
+        System.import('./src/js/main');
+    </script>
+</body>
+
+</html>

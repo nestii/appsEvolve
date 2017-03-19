@@ -1,0 +1,16 @@
+/*
+    Presentation specific CSS goes here
+*/
+
+:root {
+  --primary-color: green;
+  --secondary-color: blue;
+}
+
+.reveal .slides .primaryColor {
+    color: var(--primary-color);
+}
+
+.reveal .slides .secondaryColor {
+    color: var(--secondary-color);
+}
