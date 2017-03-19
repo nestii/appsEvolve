@@ -173,7 +173,22 @@
                         <h1 class="main-title">
                             ReQL
                         </h1>
+                        <pre><code>
+    SELECT * FROM users
+    WHERE name = "Peter"
+    AND age = 30
+                        </code></pre>
+                        <pre><code>
+    r.table("users").filter({
+        "name": "Peter",
+        "age": 30
+    })
+                        </code></pre>
+                        <div class="link_footer">
+                            <a class="fragment" href="https://rethinkdb.com/docs/sql-to-reql/python/">SQL to ReQL cheat sheet</a>
+                        </div>
                     </section>
+
                 </section>
 
                 </section>
