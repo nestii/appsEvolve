@@ -24,6 +24,14 @@
     float: left;
 }
 
+.reveal section img.img_vertical {
+    background: white;
+    border: none;
+    box-shadow: lightgray;
+    width: 250px;
+    height: 230px;
+}
+
 .reveal ul.icons-list {
     list-style-type: none;
     margin-left:0px;
